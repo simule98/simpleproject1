@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Sold Items</title>
+</head>
+<body>
+    <h1>View Sold Items</h1>
+    
+    <ul>
+        {% for sold_item in sold_items %}
+            <li>
+                Stock Item: {{ sold_item.stock_item.name }}<br>
+                Quantity: {{ sold_item.quantity }}<br>
+                Sold Date: {{ sold_item.sold_date }}
+            </li>
+        {% empty %}
+            <li>No sold items registered yet.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'register_sold_item' %}">Register Sold Item</a>
+</body>
+</html>
