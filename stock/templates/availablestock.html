@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>View Available Stock</title>
+</head>
+<body>
+    <h1>View Available Stock</h1>
+    
+    <ul>
+        {% for available_stock in available_stock %}
+            <li>{{ available_stock.stock_item.name }} - Quantity: {{ available_stock.quantity }}</li>
+        {% empty %}
+            <li>No available stock items at the moment.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'register_sold_item' %}">Register Sold Item</a>
+</body>
+</html>
